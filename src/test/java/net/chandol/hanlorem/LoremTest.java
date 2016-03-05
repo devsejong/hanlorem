@@ -21,8 +21,11 @@ public class LoremTest {
         String paragraph = Lorem.getParagraph();
         System.out.println(paragraph);
 
-        String paragraphs = Lorem.getParagraphs(4);
-        System.out.println(paragraphs);
+        String paragraphs1 = Lorem.getParagraphs(2);
+        System.out.println(paragraphs1);
+
+        String paragraphs2 = Lorem.getParagraphs(2, 4);
+        System.out.println(paragraphs2);
     }
 
     @Test

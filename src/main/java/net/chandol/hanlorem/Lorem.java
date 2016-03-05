@@ -24,15 +24,12 @@ public class Lorem {
         return sb.toString();
     }
 
-    public static String getSentences(int start, int end){
-        int count = random.nextInt(end - start) + start + 1;
-        StringBuilder sb= new StringBuilder();
-        for(int idx = 0; idx < count; idx++){
-            sb.append(getSentence());
-            if (idx < count - 1) sb.append(" ");
-        }
+    public static String getSentences(int betweenStart, int betweenEnd){
+        if(betweenEnd < betweenStart)
+            throw new LoremException("betweenStart must bigger than betweenEnd.");
 
-        return sb.toString();
+        int count = random.nextInt(betweenEnd - betweenStart) + betweenStart + 1;
+        return getSentences(count);
     }
 
 
@@ -48,6 +45,15 @@ public class Lorem {
         }
 
         return sb.toString();
+    }
+
+
+    public static String getParagraphs(int betweenStart, int betweenEnd){
+        if(betweenEnd < betweenStart)
+            throw new LoremException("betweenStart must bigger than betweenEnd.");
+
+        int count = random.nextInt(betweenEnd - betweenStart) + betweenStart + 1;
+        return getSentences(count);
     }
 
     public static String getFirstName(){
